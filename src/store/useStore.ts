@@ -4,7 +4,7 @@ import { create } from "zustand";
 interface ProductStore {
   products: any[];
   currentPage: number;
-  setProducts: (products: any[]) => void;
+  setProducts: (products?: any[]) => void;
   setPage: (page: number) => void;
 }
 
