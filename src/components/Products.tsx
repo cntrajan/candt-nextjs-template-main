@@ -1,4 +1,3 @@
-// src/components/Products.tsx
 "use client"; // This component will use client-side state
 
 import { useEffect } from "react";
