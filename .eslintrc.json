@@ -27,6 +27,8 @@
     "no-console": "error",
     "eqeqeq": ["error", "smart"],
     "no-return-await": "error",
-    "unicorn/prevent-abbreviations": "off"
+    "unicorn/prevent-abbreviations": "off",
+    "@typescript-eslint/no-explicit-any":"warn",
+    "@typescript-eslint/no-unused-vars":"warn"
   }
 }

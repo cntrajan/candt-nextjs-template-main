@@ -2,7 +2,7 @@
 "use client"; // This component will use client-side state
 
 import { useEffect } from "react";
-import { useProductStore } from "@/store/useStore";
+import { useProductStore } from "@/store/use-store";
 import { sdk } from "@/data/client";
 
 const Products = () => {
@@ -12,13 +12,9 @@ const Products = () => {
 
   useEffect(() => {
     const loadProducts = async () => {
-      try {
-        const fetchedProducts = await sdk.GetProducts();
-        console.log({ fetchedProducts });
-        setProducts(fetchedProducts.productCollection?.items);
-      } catch (e) {
-        console.log({ e });
-      }
+      const fetchedProducts = await sdk.GetProducts();
+
+      setProducts(fetchedProducts.productCollection?.items || []);
     };
 
     loadProducts();
@@ -46,7 +42,7 @@ const Products = () => {
       </div>
       <div className="flex justify-between mt-4">
         <button
-          onClick={() => setPage((prev: number) => Math.max(prev - 1, 1))}
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
@@ -54,7 +50,7 @@ const Products = () => {
         </button>
         <span>Page {currentPage}</span>
         <button
-          onClick={() => setPage((prev: number) => prev + 1)}
+          onClick={() => setPage((prev) => prev + 1)}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
           Next

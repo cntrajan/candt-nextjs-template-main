@@ -1,5 +1,5 @@
 // src/app/page.tsx
-import Products from "@/components/Products";
+import Products from "@/components/products";
 
 const Home = () => {
   return (
