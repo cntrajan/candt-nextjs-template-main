@@ -1,0 +1,13 @@
+# src/data/graphql/queries.graphql
+
+query GetProducts {
+  productCollection {
+    items {
+      title
+      discription
+      imageUrl {
+      url
+      }
+    }
+  }
+}
