@@ -11,9 +11,9 @@ interface ProductStore {
 export const useProductStore = create<ProductStore>((set) => ({
   products: [],
   currentPage: 1,
-  setProducts: (products) => set({ products }),
-  setPage: (page) =>
-    set((state) => ({
+  setProducts: (products: any[]) => set({ products }),
+  setPage: (page: number) =>
+    set((state: any) => ({
       currentPage: typeof page === "function" ? page(state.currentPage) : page,
     })),
 }));
